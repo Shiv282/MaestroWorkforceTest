@@ -24,7 +24,8 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             RightSoldier
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" href="/signin">Sign in</Button>
+          <Button color="inherit" href="/signup">Sign Up</Button>
         </Toolbar>
       </AppBar>
     </Box>

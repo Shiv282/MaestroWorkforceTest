@@ -1,14 +1,39 @@
 const mongoose = require('mongoose')
 
+//Admin Schema
+const adminSchema = new mongoose.Schema({
+    email: {
+        type: String
+    },
+    password:{
+        type: String
+    }
+})
+
+const Admin = mongoose.model('Admin',adminSchema)
+exports.Admin = Admin;
+
 //Guard Schema
 const guardSchema = new mongoose.Schema({
     name: {
         type: String
     },
+    apartmentName: {
+        type: String
+    },
+    advance:{
+        type: Number
+    },
     days:{
         type: Number
     },
-    lastPresent:{
+    lastPresentDay:{
+        type: String
+    },
+    nights:{
+        type: Number
+    },
+    lastPresentNight:{
         type: String
     }
 })
@@ -27,11 +52,23 @@ exports.Supervisor = Supervisor
 
 //Apartment Schema
 const apartmentSchema = new mongoose.Schema({
-    name: {
+    apartmentName: {
+        type: String
+    },
+    supervisorName: {
+        type: String
+    },
+    guardCount: {
+        type: Number
+    },
+    supervisorCount: {
+        type: Number
+    },
+    location: {
         type: String
     }
 })
 
 
-const Apartment = mongoose.model('Apartment',supervisorSchema)
+const Apartment = mongoose.model('Apartment',apartmentSchema)
 exports.Apartment = Apartment;
