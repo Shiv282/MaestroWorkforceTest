@@ -35,7 +35,7 @@ function createData(name, calories, fat, carbs, protein) {
 }
 const response = await axios({
     method: 'GET',
-    url: "http://localhost:3000/apartmentPage",
+    url: "http://localhost:3000/apartments",
   });
 const rows = response.data.data;
 

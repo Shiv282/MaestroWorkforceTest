@@ -23,13 +23,17 @@ async function addAdvance(event){
   }
   console.log(name);
   var advance = 100;
+  var givenBy = "Sharan";
   if(name){
+    var date = new Date();
       const response = await axios({
           method: 'POST',
           url: "http://localhost:3000/addAdvance",
           data: {
               id,
-              advance
+              advance,
+              date,
+              givenBy
           }
         });
       console.log("Marked " + name)
